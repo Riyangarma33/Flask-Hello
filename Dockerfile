@@ -9,4 +9,4 @@ ENV message=${MESSAGE}
 
 RUN pip install -r requirements.txt
 
-CMD [ "hypercorn", "app:asgi_app" ]
+CMD [ "python", "-m", "hypercorn", "app:asgi_app", "--bind", "0.0.0.0:8005" ]

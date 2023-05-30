@@ -14,7 +14,7 @@ steps:
           '--allow-unauthenticated',
           '--region=asia-southeast2',
           '--image=asia-east1-docker.pkg.dev/self-trials-mgarma/flaskhello/hello:${_TAG}',
-          '--port=8000']
+          '--port=8005']
 
 options:
   logging: CLOUD_LOGGING_ONLY
