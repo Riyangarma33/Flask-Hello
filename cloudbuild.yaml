@@ -11,8 +11,8 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     env:
       - 'TAG=$TAG'
-      args: ['push', 
-            'asia-southeast2-docker.pkg.dev/self-trials-mgarma/flaskhello/hello:$TAG']
+    args: ['push', 
+          'asia-southeast2-docker.pkg.dev/self-trials-mgarma/flaskhello/hello:$TAG']
   
   - name: 'gcr.io/cloud-builders/gcloud'
     env:
