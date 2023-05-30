@@ -1,16 +1,16 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t',
-          'asia-southeast2-docker.pkg.dev/self-trials-mgarma/flaskhello/hello:${_TAG}',
+          'asia-east1-docker.pkg.dev/self-trials-mgarma/flaskhello/hello:${_TAG}',
           '--build-arg', 'MESSAGE=${_MESSAGE}',
           '.']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push',
-          'asia-southeast2-docker.pkg.dev/self-trials-mgarma/flaskhello/hello:${_TAG}']
+          'asia-east1-docker.pkg.dev/self-trials-mgarma/flaskhello/hello:${_TAG}']
   
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run', 'deploy', 'flask-hello',
           '--allow-unauthenticated',
           '--region=asia-southeast2',
-          '--image=asia-southeast2-docker.pkg.dev/self-trials-mgarma/flaskhello/hello:${_TAG}']
+          '--image=asia-east1-docker.pkg.dev/self-trials-mgarma/flaskhello/hello:${_TAG}']
