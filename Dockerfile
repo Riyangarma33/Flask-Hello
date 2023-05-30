@@ -6,7 +6,6 @@ COPY . .
 
 ARG MESSAGE
 ENV message=${MESSAGE}
-ENV PORT=8000
 
 RUN pip install -r requirements.txt
 
