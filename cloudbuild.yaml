@@ -15,3 +15,6 @@ steps:
           '--region=asia-southeast2',
           '--image=asia-east1-docker.pkg.dev/self-trials-mgarma/flaskhello/hello:${_TAG}',
           '--port=8000']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
