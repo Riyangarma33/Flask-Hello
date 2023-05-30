@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 async def hello() -> str:
-    return environ.get('message')
+    return environ.get('message') if 'message' in environ else 'Hello World!'
 
 asgi_app = WsgiToAsgi(app)
 
