@@ -9,12 +9,12 @@ app = Flask(__name__)
 async def hello() -> str:
     ret_msg : str
     if 'message' in environ:
-        ret_msg = environ.get('message')
+        ret_msg = environ.get('message') + '&#10;&#13'
         try: 
             eval_msg = literal_eval(ret_msg)
-            ret_msg += f'\n{eval_msg}'
+            ret_msg += f'{eval_msg}'
         except ValueError as err:
-            ret_msg += f'\n{err}'
+            ret_msg += f'{err}'
     else:
         ret_msg = 'Hello World!'
     return ret_msg
